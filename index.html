@@ -1,18 +1,86 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Revan Celik | Frontend Developer</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style/assets.css">
-    <link rel="stylesheet" href="style/buttons.css">
-    <link rel="stylesheet" href="style/responsive.css">
-    <title>Portfolio</title>
-    
-    
 </head>
+
 <body>
-    
+    <header class="header">
+        <a class="logo" href="#home" aria-label="Zur Startseite">
+            &lt;RC&gt;
+        </a>
+
+        <nav class="navigation" aria-label="Hauptnavigation">
+            <a href="#about">Über mich</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projekte</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+
+        <div class="language-switch">
+            <a class="active" href="#">DE</a>
+            <span>|</span>
+            <a href="#">EN</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-copy">
+                        <p class="profession">Frontend Developer</p>
+                        <h1>Revan Celik</h1>
+
+                        <a class="contact-button" href="#contact">
+                            Kontakt
+                        </a>
+
+                        <a class="scroll-indicator" href="#about" aria-label="Zum nächsten Abschnitt">
+                            <span></span>
+                        </a>
+                    </div>
+
+                    <div class="hero-image-wrapper">
+                        <div class="image-background"></div>
+
+                        <!-- Hier dein eigenes freigestelltes Bild einsetzen -->
+                        <img
+                            class="hero-image"
+                            src="./img/transparent_revan.png"
+                            alt="Portrait von Revan Celik"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="about">
+            <p class="section-label">Über mich</p>
+            <h2>Ich entwickle moderne digitale Anwendungen.</h2>
+        </section>
+
+        <section class="content-section" id="skills">
+            <p class="section-label">Skills</p>
+            <h2>HTML, CSS und JavaScript.</h2>
+        </section>
+
+        <section class="content-section" id="projects">
+            <p class="section-label">Projekte</p>
+            <h2>Eine Auswahl meiner bisherigen Arbeiten.</h2>
+        </section>
+
+        <section class="content-section" id="contact">
+            <p class="section-label">Kontakt</p>
+            <h2>Lass uns gemeinsam etwas entwickeln.</h2>
+        </section>
+    </main>
 </body>
-<script src="js/script.js"></script>
+
 </html>
