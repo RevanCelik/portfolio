@@ -302,8 +302,8 @@ h1 {
 
 .about-intro {
     position: absolute;
-    top: 10px;
-    left: 0;
+    top: 0;
+    left: -45px;
     color: var(--accent);
     font-size: clamp(36px, 4vw, 52px);
     font-weight: 700;
@@ -345,8 +345,8 @@ h1 {
 
 /* Pfeil von „Ich bin“ zu Remote */
 .arrow-location {
-    top: 78px;
-    left: 145px;
+    top: 45px;
+    left: 195px;
     width: 38px;
 }
 
@@ -396,6 +396,67 @@ h1 {
     background-color: var(--accent);
     color: var(--background);
     transform: translateY(-3px);
+}
+
+.about-icon {
+    position: relative;
+    display: block;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+}
+
+.about-icon::before,
+.about-icon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: opacity 250ms ease-in-out;
+}
+
+.about-icon::before {
+    opacity: 1;
+}
+
+.about-icon::after {
+    opacity: 0;
+}
+
+.about-item:hover .about-icon::before {
+    opacity: 0;
+}
+
+.about-item:hover .about-icon::after {
+    opacity: 1;
+}
+
+.location-icon::before {
+    background-image: url("./img/location.svg");
+}
+
+.location-icon::after {
+    background-image: url("./img/locationHover.svg");
+}
+
+.remote-icon::before {
+    background-image: url("./img/iconRemote.svg");
+}
+
+.remote-icon::after {
+    background-image: url("./img/iconRemoteHover.svg");
+    transform: scale(1.15) translate(-3px, -3px);
+    transform-origin: center;
+}
+
+.relocate-icon::before {
+    background-image: url("./img/koffer.svg");
+}
+
+.relocate-icon::after {
+    background-image: url("./img/kofferHover.svg");
 }
 
 @media only screen and (max-width: 900px) {
