@@ -414,7 +414,7 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    transition: opacity 250ms ease-in-out;
+    /* transition: opacity 250ms ease-in-out; */
 }
 
 .about-icon::before {
@@ -439,6 +439,8 @@ h1 {
 
 .location-icon::after {
     background-image: url("./img/locationHover.svg");
+    transform: scale(1.3) translate(0, 3.95px);
+    transform-origin: center;
 }
 
 .remote-icon::before {
@@ -447,7 +449,7 @@ h1 {
 
 .remote-icon::after {
     background-image: url("./img/iconRemoteHover.svg");
-    transform: scale(1.15) translate(-3px, -3px);
+    transform: scale(1.14) translate(-3.2px, -2.05px);
     transform-origin: center;
 }
 
@@ -457,6 +459,56 @@ h1 {
 
 .relocate-icon::after {
     background-image: url("./img/kofferHover.svg");
+    transform: scale(1.05) translate(0, 1px);
+    transform-origin: center;
+}
+
+.skills-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-section h2 {
+    margin-bottom: 64px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 72px 80px;
+    width: 100%;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    transition: transform 180ms ease;
+}
+
+.skill-item span {
+    color: #00f4c4;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* .skill-item:hover img {
+    transform: scale(1.12);
+} */
+
+.skill-item-challenge img {
+    width: 88px;
+    height: 88px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -699,5 +751,32 @@ h1 {
     .about-item img {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 56px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .skills-section h2 {
+        margin-bottom: 44px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 44px 24px;
+    }
+
+    .skill-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill-item span {
+        font-size: 16px;
     }
 }
