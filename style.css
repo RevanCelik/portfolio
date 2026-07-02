@@ -449,7 +449,7 @@ h1 {
 
 .remote-icon::after {
     background-image: url("./img/iconRemoteHover.svg");
-    transform: scale(1.14) translate(-3.2px, -2.05px);
+    transform: scale(1.109) translate(-3.2px, -2.05px);
     transform-origin: center;
 }
 
@@ -509,6 +509,199 @@ h1 {
 .skill-item-challenge img {
     width: 88px;
     height: 88px;
+}
+
+.projects-section {
+    min-height: 100vh;
+    padding: 100px 48px;
+    background-color: var(--background);
+}
+
+.projects-container {
+    width: min(100%, 1230px);
+    margin: 0 auto;
+}
+
+.projects-title {
+    margin-bottom: 70px;
+    color: var(--accent);
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1;
+    text-align: center;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(420px, 1fr) minmax(380px, 0.95fr);
+    align-items: center;
+    gap: clamp(50px, 7vw, 90px);
+}
+
+.project-preview {
+    width: 100%;
+}
+
+.project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border: 1px solid rgba(0, 230, 195, 0.45);
+    background:
+        linear-gradient(135deg,
+            rgba(0, 230, 195, 0.08),
+            rgba(255, 98, 78, 0.08));
+    color: var(--primary);
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 600;
+}
+
+.project-content h3 {
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-size: clamp(38px, 4vw, 54px);
+    line-height: 1;
+}
+
+.project-technologies {
+    margin-bottom: 38px;
+    color: var(--primary);
+    font-size: clamp(14px, 1.4vw, 18px);
+    line-height: 1.5;
+}
+
+.project-description {
+    max-width: 560px;
+    margin-bottom: 44px;
+    color: var(--primary);
+    font-size: clamp(14px, 1.4vw, 18px);
+    line-height: 1.45;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.project-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 126px;
+    min-height: 54px;
+    padding: 12px 24px;
+    font-size: 17px;
+    font-weight: 600;
+    transition:
+        color 150ms ease,
+        background-color 150ms ease,
+        transform 150ms ease;
+}
+
+.project-button:hover {
+    transform: translateY(-3px);
+}
+
+.project-button-outline {
+    border: 1px solid var(--primary);
+    color: var(--accent);
+}
+
+.project-button-outline:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.project-button-filled {
+    border: 1px solid var(--primary);
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.project-button-filled:hover {
+    border-color: var(--accent);
+    background-color: var(--accent);
+}
+
+.project-card+.project-card {
+    margin-top: 80px;
+}
+
+.project-card-reverse .project-preview {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.project-card-reverse .project-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.project-insights {
+    position: relative;
+    width: 100%;
+    margin-top: 110px;
+    padding-top: 42px;
+}
+
+.project-insights-title {
+    margin-bottom: 38px;
+    color: var(--accent);
+    font-size: clamp(18px, 1.6vw, 24px);
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.project-insights-title span {
+    display: inline;
+    color: var(--accent);
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.project-insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(50px, 7vw, 110px);
+    padding-left: 120px;
+}
+
+.project-insight {
+    position: relative;
+}
+
+.project-insight h3 {
+    margin-bottom: 6px;
+    color: var(--accent);
+    font-size: clamp(20px, 2vw, 25px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.project-insight-label {
+    margin-bottom: 30px;
+    color: var(--primary);
+    font-size: clamp(14px, 1.3vw, 17px);
+    line-height: 1.4;
+}
+
+.project-insight-text {
+    color: var(--primary);
+    font-size: clamp(14px, 1.3vw, 17px);
+    line-height: 1.45;
+}
+
+
+.project-insights-arrow {
+    position: absolute;
+    top: 112px;
+    left: 4px;
+    display: block;
+    width: 48px;
+    height: auto;
+    transform: rotate(-32deg);
 }
 
 @media only screen and (max-width: 900px) {
@@ -718,6 +911,41 @@ h1 {
         margin-top: 30px;
         margin-left: 0;
     }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .project-preview {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .project-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .project-card-reverse .project-preview,
+    .project-card-reverse .project-content {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .project-insights-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding-left: 0;
+    }
+
+    .project-insights-arrow {
+        display: none;
+    }
+
+    .project-insight-label {
+        margin-bottom: 16px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -752,6 +980,52 @@ h1 {
         width: 40px;
         height: 40px;
     }
+
+    .projects-section {
+        min-height: auto;
+        padding: 90px 20px;
+    }
+
+    .projects-title {
+        margin-bottom: 48px;
+        text-align: left;
+    }
+
+    .project-card {
+        gap: 34px;
+    }
+
+    .project-technologies {
+        margin-bottom: 24px;
+    }
+
+    .project-description {
+        margin-bottom: 32px;
+    }
+
+    .project-links {
+        gap: 14px;
+    }
+
+    .project-button {
+        min-width: 112px;
+        min-height: 48px;
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .project-card+.project-card {
+        margin-top: 55px;
+    }
+
+    .project-insights {
+        margin-top: 75px;
+        padding-top: 32px;
+    }
+
+    .project-insights-title {
+        margin-bottom: 34px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -778,5 +1052,11 @@ h1 {
 
     .skill-item span {
         font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .project-insights-title {
+        white-space: nowrap;
     }
 }
