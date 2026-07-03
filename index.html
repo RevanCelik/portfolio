@@ -33,24 +33,24 @@
     <main>
         <section class="hero" id="home">
             <div class="hero-inner">
+                <a class="contact-button" href="#contact">
+                    Kontakt
+                </a>
+
                 <div class="hero-content">
-                    <div class="hero-copy">
+                    <div class="hero-text">
                         <p class="profession">Frontend Developer</p>
+
                         <h1>Revan Celik</h1>
-
-                        <a class="contact-button" href="#contact">
-                            Kontakt
-                        </a>
-
-                        <a class="scroll-indicator" href="#about" aria-label="Zum nächsten Abschnitt">
-                            <span></span>
-                        </a>
                     </div>
+
+                    <a class="scroll-indicator" href="#about" aria-label="Zum nächsten Abschnitt">
+                        <span></span>
+                    </a>
 
                     <div class="hero-image-wrapper">
                         <div class="image-background"></div>
 
-                        <!-- Hier dein eigenes freigestelltes Bild einsetzen -->
                         <img class="hero-image" src="./img/transparent_revan.png" alt="Portrait von Revan Celik">
                     </div>
                 </div>
@@ -264,11 +264,99 @@
             </div>
         </section>
 
-        <section class="content-section" id="contact">
-            <p class="section-label">Kontakt</p>
-            <h2>Lass uns gemeinsam etwas entwickeln.</h2>
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <div class="contact-intro">
+                        <div class="contact-title-wrapper">
+                            <h2 class="contact-title">Kontakt</h2>
+
+                            <img class="contact-title-arrow" src="./img/contact-arrow.svg" alt="" aria-hidden="true">
+                        </div>
+
+                        <p class="contact-description">
+                            Du hast eine interessante Projektidee, suchst Unterstützung
+                            für dein Team oder möchtest dich einfach austauschen?
+                            Dann schreib mir gerne eine Nachricht.
+                        </p>
+                    </div>
+
+                    <div class="contact-details">
+                        <a class="contact-detail" href="mailto:revancelik444@gmail.com">
+                            <span class="contact-detail-icon" aria-hidden="true">✉</span>
+
+                            <span>
+                                <strong>E-Mail:</strong>
+                                revancelik444@gmail.com
+                            </span>
+                        </a>
+
+                        <a class="contact-detail" href="tel:+491234567890">
+                            <span class="contact-detail-icon" aria-hidden="true">☎</span>
+
+                            <span>
+                                <strong>Tel:</strong>
+                                0123 456 7890
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="contact-form-grid">
+                        <div class="contact-form-column">
+                            <div class="contact-field">
+                                <label for="contactName">Dein Name</label>
+
+                                <input id="contactName" name="name" type="text" placeholder="Dein Name"
+                                    autocomplete="name" required>
+                            </div>
+
+                            <div class="contact-field">
+                                <label for="contactEmail">Deine E-Mail-Adresse</label>
+
+                                <input id="contactEmail" name="email" type="email" placeholder="Deine E-Mail-Adresse"
+                                    autocomplete="email" required>
+                            </div>
+                        </div>
+
+                        <div class="contact-field contact-message-field">
+                            <label for="contactMessage">Deine Nachricht</label>
+
+                            <textarea id="contactMessage" name="message" placeholder="Deine Nachricht"
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-footer">
+                        <label class="privacy-checkbox">
+                            <input id="contactPrivacy" name="privacy" type="checkbox" required>
+
+                            <span class="privacy-checkbox-control"></span>
+
+                            <span>
+                                Ich habe die
+                                <a href="./privacy-policy.html">Datenschutzerklärung</a>
+                                gelesen und stimme der Verarbeitung meiner Daten zu.
+                            </span>
+                        </label>
+
+                        <button class="contact-submit-button" type="submit">
+                            Senden
+                        </button>
+                    </div>
+
+                    <p class="contact-form-status" id="contactFormStatus" aria-live="polite"></p>
+                </form>
+
+                <a class="contact-scroll-top" href="#home" aria-label="Zurück zum Seitenanfang">
+                    ↑
+                </a>
+            </div>
         </section>
     </main>
+
+    <script src="./contact.js"></script>
 </body>
 
 </html>
