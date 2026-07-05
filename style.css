@@ -872,6 +872,14 @@ h1 {
     margin-top: 34px;
 }
 
+.contact-form-status-success {
+    color: var(--primary);
+}
+
+.contact-form-status-error {
+    color: var(--accent);
+}
+
 .privacy-checkbox {
     display: flex;
     align-items: flex-start;
