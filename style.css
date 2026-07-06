@@ -32,17 +32,35 @@ a {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 50%;
-    z-index: 10;
+    left: 0;
+    z-index: 1000;
 
     display: flex;
     align-items: center;
-    width: min(100% - 48px, 1180px);
+    width: 100%;
     height: var(--header-height);
+    padding: 0 max(24px, calc((100% - 1230px) / 2));
 
-    transform: translateX(-50%);
+    background-color: rgba(9, 0, 34, 0.96);
+    backdrop-filter: blur(10px);
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -14px;
+
+    width: 100%;
+    height: 14px;
+
+    background: linear-gradient(to bottom,
+            rgba(9, 0, 34, 0.75),
+            rgba(9, 0, 34, 0));
+
+    pointer-events: none;
 }
 
 .logo {
@@ -95,7 +113,7 @@ a {
 
 .hero-inner {
     position: relative;
-    width: min(100% - 48px, 1180px);
+    width: min(100% - 48px, 1230px);
     min-height: 100vh;
     margin: 0 auto;
 }
@@ -220,7 +238,7 @@ h1 {
 
 .content-section {
     min-height: 70vh;
-    padding: 120px max(7vw, 32px);
+    padding: 120px 48px;
     background-color: var(--background-secondary);
 }
 
@@ -235,10 +253,12 @@ h1 {
 }
 
 .section-label {
-    margin-bottom: 24px;
+    margin-bottom: 70px;
     color: var(--accent);
-    font-size: 16px;
-    text-transform: uppercase;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1;
+    text-align: left;
+    font-weight: bold;
 }
 
 .about-section {
@@ -464,6 +484,11 @@ h1 {
     transform-origin: center;
 }
 
+.skills-container {
+    width: min(100%, 1230px);
+    margin: 0 auto;
+}
+
 .skills-section {
     display: flex;
     flex-direction: column;
@@ -540,10 +565,6 @@ h1 {
 
 .project-preview {
     width: 100%;
-}
-
-.project-preview {
-    width: 100%;
     max-width: 590px;
     aspect-ratio: 16 / 10;
     overflow: hidden;
@@ -595,13 +616,8 @@ h1 {
     font-size: 17px;
     font-weight: 600;
     transition:
-        color 150ms ease,
-        background-color 150ms ease,
-        transform 150ms ease;
-}
-
-.project-button:hover {
-    transform: translateY(-3px);
+        color 450ms ease,
+        transform 450ms ease;
 }
 
 .project-button-outline {
@@ -610,8 +626,8 @@ h1 {
 }
 
 .project-button-outline:hover {
-    background-color: var(--primary);
-    color: var(--background);
+    color: var(--primary);
+    transition: color 450ms ease, transform 450ms ease;
 }
 
 .project-button-filled {
@@ -621,8 +637,7 @@ h1 {
 }
 
 .project-button-filled:hover {
-    border-color: var(--accent);
-    background-color: var(--accent);
+    color: var(--accent);
 }
 
 .project-card+.project-card {
@@ -1117,9 +1132,8 @@ h1 {
 
 @media only screen and (max-width: 900px) {
 
-    .header,
     .hero-inner {
-        width: min(100% - 32px, 1180px);
+        width: min(100% - 32px, 1230px);
     }
 
     .navigation {
@@ -1262,9 +1276,8 @@ h1 {
 
 @media only screen and (min-width: 1440px) {
 
-    .header,
     .hero-inner {
-        width: 1180px;
+        width: 1230px;
     }
 
     .hero-content {
