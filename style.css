@@ -149,26 +149,17 @@ h1 {
 
 .hero-image-wrapper {
     position: absolute;
-    right: 0;
+    right: -40px;
     bottom: 0;
     z-index: 2;
+
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    width: min(44vw, 560px);
+
+    width: min(52vw, 680px);
     height: calc(100% - var(--header-height));
 }
-
-/* .image-background {
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    width: 78%;
-    aspect-ratio: 1;
-    border: 1px solid rgba(0, 230, 195, 0.35);
-    border-radius: 50%;
-    transform: translateX(-50%);
-} */
 
 .hero-image {
     position: relative;
@@ -204,7 +195,7 @@ h1 {
 }
 
 .scroll-indicator {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     z-index: 4;
@@ -1317,15 +1308,15 @@ h1 {
     }
 
     .hero-image-wrapper {
-        right: 80px;
+        right: -40px;
         bottom: 0;
-        width: 480px;
-        height: 68vh;
+        width: 700px;
+        height: 84vh;
     }
 
     .hero-image {
         width: 100%;
-        max-height: 68vh;
+        max-height: 84vh;
     }
 }
 
@@ -1335,13 +1326,13 @@ h1 {
     }
 
     .hero-image-wrapper {
-        right: 40px;
-        width: 520px;
-        height: 72vh;
+        right: -70px;
+        width: 760px;
+        height: 88vh;
     }
 
     .hero-image {
-        max-height: 72vh;
+        max-height: 88vh;
     }
 
     .contact-button {

@@ -71,6 +71,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
             '-f ' . $siteEmail 
         );
 
+//         echo json_encode([
+//     'success' => true,
+//     'message' => 'Die Formulardaten wurden erfolgreich empfangen.',
+//     'data' => [
+//         'name' => $safeName,
+//         'email' => $safeEmail,
+//         'message' => $safeMessage
+//     ]
+// ]);
+
+exit;
+
         if ($success) {
             echo json_encode(['success' => true]);
         } else {
