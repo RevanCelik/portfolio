@@ -17,29 +17,29 @@
         </a>
 
         <nav class="navigation" aria-label="Hauptnavigation">
-            <a href="#about">Über mich</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projekte</a>
-            <a href="#contact">Kontakt</a>
+            <a href="#about" data-i18n="navAbout">Über mich</a>
+            <a href="#skills" data-i18n="navSkills">Skills</a>
+            <a href="#projects" data-i18n="navProjects">Projekte</a>
+            <a href="#contact" data-i18n="navContact">Kontakt</a>
         </nav>
 
         <div class="language-switch">
-            <a class="active" href="#">DE</a>
+            <button class="language-button active" type="button" data-lang-button="de">DE</button>
             <span>|</span>
-            <a href="#">EN</a>
+            <button class="language-button" type="button" data-lang-button="en">EN</button>
         </div>
     </header>
 
     <main>
         <section class="hero" id="home">
             <div class="hero-inner">
-                <a class="contact-button" href="#contact">
+                <a class="contact-button" href="#contact" data-i18n="contactButton">
                     Kontakt
                 </a>
 
                 <div class="hero-content">
                     <div class="hero-text">
-                        <p class="profession">Frontend Developer</p>
+                        <p class="profession" data-i18n="profession">Frontend Developer</p>
 
                         <h1>Revan Celik</h1>
                     </div>
@@ -65,10 +65,11 @@
 
                 <div class="about-content">
                     <h2 class="about-title">
-                        Warum <span>ich</span>
+                        <span data-i18n="aboutTitleWhy">Warum</span>
+                        <span data-i18n="aboutTitleMe">ich</span>
                     </h2>
 
-                    <p class="about-description">
+                    <p class="about-description" data-i18n="aboutDescription">
                         Ich arbeite seit mehreren Jahren in der IT und bin als Customer Support Engineer im Second- und
                         Third-Level-Support tätig. Zu meinen Aufgaben gehören die technische Analyse und Fehlersuche in
                         komplexen IT-Umgebungen sowie die Betreuung und Analyse unserer unternehmenseigenen Software.
@@ -80,30 +81,30 @@
                     </p>
 
                     <div class="about-details">
-                        <p class="about-intro">Ich bin</p>
+                        <p class="about-intro" data-i18n="aboutIntro">Ich bin</p>
 
                         <div class="about-item about-location">
                             <span class="about-icon location-icon"></span>
-                            <span>aus Langen</span>
+                            <span data-i18n="aboutLocation">aus Langen</span>
                         </div>
 
                         <img class="about-arrow arrow-location" src="./img/arrowsidedown.svg" alt="">
 
                         <div class="about-item about-remote">
                             <span class="about-icon remote-icon"></span>
-                            <span>offen für<br>Remote-Arbeit</span>
+                            <span data-i18n="aboutRemote">offen für<br>Remote-Arbeit</span>
                         </div>
 
                         <img class="about-arrow arrow-remote" src="./img/arrowsideup.svg" alt="">
 
                         <div class="about-item about-relocate">
                             <span class="about-icon relocate-icon"></span>
-                            <span>offen für<br>neue Möglichkeiten</span>
+                            <span data-i18n="aboutRelocate">offen für<br>neue Möglichkeiten</span>
                         </div>
 
                         <img class="about-arrow arrow-talk" src="./img/arrowletstalk.svg" alt="">
 
-                        <a class="about-button" href="#contact">
+                        <a class="about-button" href="#contact" data-i18n="aboutButton">
                             Lass uns reden
                         </a>
                     </div>
@@ -113,7 +114,7 @@
 
         <section class="content-section skills-section" id="skills">
             <div class="skills-container">
-                <p class="section-label">Meine Skills</p>
+                <p class="section-label" data-i18n="skillsTitle">Meine Skills</p>
 
                 <div class="skills-grid">
                     <div class="skill-item">
@@ -153,7 +154,7 @@
 
         <section class="projects-section" id="projects">
             <div class="projects-container">
-                <h2 class="projects-title">Meine Projekte</h2>
+                <h2 class="projects-title" data-i18n="projectsTitle">Meine Projekte</h2>
 
                 <article class="project-card">
                     <div class="project-preview">
@@ -167,7 +168,7 @@
                             Angular | TypeScript | HTML | CSS | Firebase
                         </p>
 
-                        <p class="project-description">
+                        <p class="project-description" data-i18n="projectDescriptionJoin">
                             Ein vom Kanban-System inspirierter Task-Manager.
                             Erstelle und organisiere Aufgaben per Drag-and-drop,
                             weise Benutzer zu und verwalte Kategorien.
@@ -200,7 +201,7 @@
                             JavaScript | HTML | CSS
                         </p>
 
-                        <p class="project-description">
+                        <p class="project-description" data-i18n="projectDescriptionElPolloLoco">
                             Ein Jump-and-Run-Spiel auf Basis eines objektorientierten
                             Programmieransatzes. Hilf Pepe dabei, Münzen und Salsa-Flaschen
                             zu sammeln, um gegen das verrückte Huhn zu kämpfen.
@@ -222,16 +223,16 @@
 
                 <div class="project-insights">
                     <img class="project-insights-arrow" src="./img/project-arrow.svg" alt="" aria-hidden="true">
-                    <h2 class="project-insights-title">
+                    <h2 class="project-insights-title" data-i18n="projectInsightsTitle">
                         Auf der Suche nach einem Problemlöser? Das zeichnet meine Arbeitsweise aus.
                     </h2>
 
                     <div class="project-insights-grid">
                         <article class="project-insight">
-                            <h3>Eigenverantwortung</h3>
-                            <p class="project-insight-label">Projektplanung</p>
+                            <h3 data-i18n="insightResponsibilityTitle">Eigenverantwortung</h3>
+                            <p class="project-insight-label" data-i18n="insightResponsibilityLabel">Projektplanung</p>
 
-                            <p>
+                            <p data-i18n="insightResponsibilityText">
                                 Ich strukturiere größere Aufgaben in überschaubare Schritte
                                 und entwickle Lösungen eigenständig von der Planung bis
                                 zur Umsetzung.
@@ -239,10 +240,11 @@
                         </article>
 
                         <article class="project-insight">
-                            <h3>Problemlösung</h3>
-                            <p class="project-insight-label">Debugging &amp; Analyse</p>
+                            <h3 data-i18n="insightProblemSolvingTitle">Problemlösung</h3>
+                            <p class="project-insight-label" data-i18n="insightProblemSolvingLabel">Debugging &amp;
+                                Analyse</p>
 
-                            <p>
+                            <p data-i18n="insightProblemSolvingText">
                                 Fehler sehe ich nicht nur als Hindernis, sondern als
                                 Möglichkeit, Zusammenhänge besser zu verstehen und
                                 nachhaltige Lösungen zu entwickeln.
@@ -250,10 +252,10 @@
                         </article>
 
                         <article class="project-insight">
-                            <h3>Weiterentwicklung</h3>
-                            <p class="project-insight-label">Clean Code</p>
+                            <h3 data-i18n="insightDevelopmentTitle">Weiterentwicklung</h3>
+                            <p class="project-insight-label" data-i18n="insightDevelopmentLabel">Clean Code</p>
 
-                            <p>
+                            <p data-i18n="insightDevelopmentText">
                                 Mit jedem Projekt achte ich stärker auf klare Strukturen,
                                 wiederverwendbaren Code und eine verständliche
                                 Dokumentation.
@@ -269,12 +271,12 @@
                 <div class="contact-header">
                     <div class="contact-intro">
                         <div class="contact-title-wrapper">
-                            <h2 class="contact-title">Kontakt</h2>
+                            <h2 class="contact-title" data-i18n="contactTitle">Kontakt</h2>
 
                             <img class="contact-title-arrow" src="./img/contact-arrow.svg" alt="" aria-hidden="true">
                         </div>
 
-                        <p class="contact-description">
+                        <p class="contact-description" data-i18n="contactDescription">
                             Du hast eine interessante Projektidee, suchst Unterstützung
                             für dein Team oder möchtest dich einfach austauschen?
                             Dann schreib mir gerne eine Nachricht.
@@ -306,25 +308,25 @@
                     <div class="contact-form-grid">
                         <div class="contact-form-column">
                             <div class="contact-field">
-                                <label for="contactName">Dein Name</label>
+                                <label for="contactName" data-i18n="contactNameLabel">Dein Name</label>
 
                                 <input id="contactName" name="name" type="text" placeholder="Dein Name"
-                                    autocomplete="name" required>
+                                    data-i18n-placeholder="contactNamePlaceholder" autocomplete="name" required>
                             </div>
 
                             <div class="contact-field">
-                                <label for="contactEmail">Deine E-Mail-Adresse</label>
+                                <label for="contactEmail" data-i18n="contactEmailLabel">Deine E-Mail-Adresse</label>
 
                                 <input id="contactEmail" name="email" type="email" placeholder="Deine E-Mail-Adresse"
-                                    autocomplete="email" required>
+                                    data-i18n-placeholder="contactEmailPlaceholder" autocomplete="email" required>
                             </div>
                         </div>
 
                         <div class="contact-field contact-message-field">
-                            <label for="contactMessage">Deine Nachricht</label>
+                            <label for="contactMessage" data-i18n="contactMessageLabel">Deine Nachricht</label>
 
                             <textarea id="contactMessage" name="message" placeholder="Deine Nachricht"
-                                required></textarea>
+                                data-i18n-placeholder="contactMessagePlaceholder" required></textarea>
                         </div>
                     </div>
 
@@ -334,14 +336,14 @@
 
                             <span class="privacy-checkbox-control"></span>
 
-                            <span>
+                            <span data-i18n="privacyText">
                                 Ich habe die
                                 <a href="./legal/privacypolicy.html">Datenschutzerklärung</a>
                                 gelesen und stimme der Verarbeitung meiner Daten zu.
                             </span>
                         </label>
 
-                        <button class="contact-submit-button" type="submit">
+                        <button class="contact-submit-button" type="submit" data-i18n="submitButton">
                             Senden
                         </button>
                     </div>
@@ -372,11 +374,11 @@
                 </p>
 
                 <nav class="footer-legal" aria-label="Rechtliche Informationen">
-                    <a href="./legal/legalnotice.html">
+                    <a href="./legal/legalnotice.html" data-i18n="legalNotice">
                         Legal Notice
                     </a>
 
-                    <a href="./legal/privacypolicy.html">
+                    <a href="./legal/privacypolicy.html" data-i18n="privacyPolicy">
                         Privacy Policy
                     </a>
                 </nav>
@@ -405,6 +407,7 @@
     </footer>
 
     <script src="./js/contact.js"></script>
+    <script src="./js/language.js"></script>
 </body>
 
 </html>
