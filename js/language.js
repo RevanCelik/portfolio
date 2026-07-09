@@ -8,7 +8,7 @@ const translations = {
         profession: "Frontend Developer",
         aboutTitlePart1: "Warum",
         aboutTitlePart2: "ich",
-        aboutDescription: "Ich bin ein passionierter Frontend Developer mit Leidenschaft für moderne Webtechnologien.",
+        aboutDescription: "Ich arbeite seit mehreren Jahren in der IT und bin als Customer Support Engineer im Second- und Third-Level-Support tätig. Zu meinen Aufgaben gehören die technische Analyse und Fehlersuche in komplexen IT-Umgebungen sowie die Betreuung und Analyse unserer unternehmenseigenen Software. Ein wesentlicher Bestandteil meiner Arbeit ist die Auswertung von Logdateien und Rohdaten zur Ursachenanalyse. Zur Optimierung dieser Prozesse habe ich eigene Tools entwickelt, die die Analyse und Auswertung von Supportdaten erleichtern. Ergänzend betreue ich IT- und Telefonieumgebungen und arbeite regelmäßig mit Microsoft-Technologien, darunter Microsoft Teams.",
         aboutIntro: "Ich bin",
         aboutLocation: "aus Langen",
         aboutRemote: "offen für<br>Remote-Arbeit",
