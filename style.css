@@ -51,7 +51,15 @@ html {
 
 body {
     min-width: 320px;
-    background-color: var(--background);
+    background:
+        linear-gradient(180deg,
+            #090022 0%,
+            #10052d 22%,
+            #090022 45%,
+            #160747 68%,
+            #090022 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     color: var(--text);
     font-family: "Fira Code", monospace;
 }
@@ -211,7 +219,7 @@ h1 {
 }
 
 .contact-button {
-    position: fixed;
+    position: absolute;
     top: 31%;
     left: max(2.5vw, 20px);
     z-index: 5;
@@ -1308,45 +1316,45 @@ h1 {
     }
 
     .hero-inner {
-    width: min(100% - 32px, 390px);
-}
+        width: min(100% - 32px, 390px);
+    }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: var(--header-height);
-}
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-top: var(--header-height);
+    }
 
-.hero-image-wrapper {
-    position: static;
-    width: 100%;
-    height: auto;
-    margin-top: 28px;
-    opacity: 1;
-}
+    .hero-image-wrapper {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 28px;
+        opacity: 1;
+    }
 
-.hero-image {
-    width: 100%;
-    max-height: 56vh;
-}
+    .hero-image {
+        width: 100%;
+        max-height: 56vh;
+    }
 
-.hero-text {
-    position: static;
-    width: 100%;
-    margin-top: 10px;
-    text-align: center;
-}
+    .hero-text {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+    }
 
-.profession {
-    font-size: clamp(20px, 6vw, 28px);
-}
+    .profession {
+        font-size: clamp(20px, 6vw, 28px);
+    }
 
-h1 {
-    max-width: 100%;
-    font-size: clamp(34px, 10vw, 48px);
-    overflow-wrap: break-word;
-}
+    h1 {
+        max-width: 100%;
+        font-size: clamp(34px, 10vw, 48px);
+        overflow-wrap: break-word;
+    }
 
     .image-background {
         width: 70%;
@@ -1758,6 +1766,7 @@ h1 {
 }
 
 @media only screen and (max-width: 700px) {
+
     .skills-container,
     .projects-container,
     .contact-container {
@@ -1934,4 +1943,76 @@ h1 {
     .project-insight p {
         text-align: center;
     }
+}
+
+.skills-mobile-cta {
+    display: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .skills-mobile-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 48px;
+        text-align: center;
+    }
+
+    .skills-mobile-arrow {
+        display: block;
+        width: 16px;
+        height: auto;
+        margin-bottom: 22px;
+    }
+
+    .skills-mobile-text {
+        max-width: 330px;
+        margin-bottom: 26px;
+        color: var(--primary);
+        font-size: 15px;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .skills-mobile-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 138px;
+        min-height: 48px;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: var(--background);
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+body {
+    background-color: var(--background);
+}
+
+main {
+    background:
+        radial-gradient(circle at 85% 55%,
+            rgba(54, 16, 190, 0.75) 0%,
+            rgba(26, 7, 92, 0.45) 22%,
+            rgba(9, 0, 34, 0) 48%),
+        linear-gradient(180deg,
+            #090022 0%,
+            #0d032c 30%,
+            #130640 58%,
+            #090022 100%);
+}
+
+.hero,
+.about-section,
+.content-section,
+.content-section:nth-child(even),
+.skills-section,
+.projects-section,
+.contact-section {
+    background-color: transparent;
+    background-image: none;
 }

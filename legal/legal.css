@@ -89,11 +89,9 @@ a {
     width: 100%;
     height: 14px;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(9, 0, 34, 0.75),
-        rgba(9, 0, 34, 0)
-    );
+    background: linear-gradient(to bottom,
+            rgba(9, 0, 34, 0.75),
+            rgba(9, 0, 34, 0));
 
     pointer-events: none;
 }
@@ -188,7 +186,7 @@ a {
     line-height: 1.7;
 }
 
-.legal-section p + p {
+.legal-section p+p {
     margin-top: 14px;
 }
 
@@ -264,6 +262,13 @@ a {
     .legal-main {
         width: min(100% - 32px, 960px);
         padding: calc(var(--header-height) + 60px) 0 80px;
+    }
+
+    .legal-title {
+        font-size: clamp(28px, 9vw, 42px);
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+        hyphens: auto;
     }
 
     .legal-section {
