@@ -300,12 +300,12 @@
                     </div>
 
                     <div class="contact-details">
-                        <a class="contact-detail" href="mailto:revancelik444@gmail.com">
+                        <a class="contact-detail" href="mailto:info@revan-celik.de">
                             <span class="contact-detail-icon" aria-hidden="true">✉</span>
 
                             <span>
                                 <strong>E-Mail:</strong>
-                                revancelik@gmx.de
+                                info@revan-celik.de
                             </span>
                         </a>
 
@@ -320,21 +320,28 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm" action="./php/contact_form_mail.php" method="post">
+                <form class="contact-form" id="contactForm" action="./php/contact_form_mail.php" method="post"
+                    novalidate>
                     <div class="contact-form-grid">
                         <div class="contact-form-column">
                             <div class="contact-field">
                                 <label for="contactName" data-i18n="contactNameLabel">Dein Name</label>
 
                                 <input id="contactName" name="name" type="text" placeholder="Dein Name"
-                                    data-i18n-placeholder="contactNamePlaceholder" autocomplete="name" required>
+                                    data-i18n-placeholder="contactNamePlaceholder" autocomplete="name" maxlength="100"
+                                    aria-describedby="contactNameError" required>
+
+                                <span class="contact-field-error" id="contactNameError" aria-live="polite"></span>
                             </div>
 
                             <div class="contact-field">
                                 <label for="contactEmail" data-i18n="contactEmailLabel">Deine E-Mail-Adresse</label>
 
                                 <input id="contactEmail" name="email" type="email" placeholder="Deine E-Mail-Adresse"
-                                    data-i18n-placeholder="contactEmailPlaceholder" autocomplete="email" required>
+                                    data-i18n-placeholder="contactEmailPlaceholder" autocomplete="email" maxlength="254"
+                                    aria-describedby="contactEmailError" required>
+
+                                <span class="contact-field-error" id="contactEmailError" aria-live="polite"></span>
                             </div>
                         </div>
 
@@ -342,24 +349,32 @@
                             <label for="contactMessage" data-i18n="contactMessageLabel">Deine Nachricht</label>
 
                             <textarea id="contactMessage" name="message" placeholder="Deine Nachricht"
-                                data-i18n-placeholder="contactMessagePlaceholder" required></textarea>
+                                data-i18n-placeholder="contactMessagePlaceholder" maxlength="5000"
+                                aria-describedby="contactMessageError" required></textarea>
+
+                            <span class="contact-field-error" id="contactMessageError" aria-live="polite"></span>
                         </div>
                     </div>
 
                     <div class="contact-form-footer">
-                        <label class="privacy-checkbox">
-                            <input id="contactPrivacy" name="privacy" type="checkbox" required>
+                        <div class="privacy-field">
+                            <label class="privacy-checkbox">
+                                <input id="contactPrivacy" name="privacy" type="checkbox"
+                                    aria-describedby="contactPrivacyError" required>
 
-                            <span class="privacy-checkbox-control"></span>
+                                <span class="privacy-checkbox-control"></span>
 
-                            <span data-i18n="privacyText">
-                                Ich habe die
-                                <a href="./legal/privacypolicy.html">Datenschutzerklärung</a>
-                                gelesen und stimme der Verarbeitung meiner Daten zu.
-                            </span>
-                        </label>
+                                <span data-i18n="privacyText">
+                                    Ich habe die
+                                    <a href="./legal/privacypolicy.html">Datenschutzerklärung</a>
+                                    gelesen und stimme der Verarbeitung meiner Daten zu.
+                                </span>
+                            </label>
 
-                        <button class="contact-submit-button" type="submit" data-i18n="submitButton">
+                            <span class="contact-field-error" id="contactPrivacyError" aria-live="polite"></span>
+                        </div>
+
+                        <button class="contact-submit-button" type="submit" data-i18n="submitButton" disabled>
                             Senden
                         </button>
                     </div>
@@ -410,7 +425,7 @@
                         alt="" aria-hidden="true">
                 </a>
 
-                <a class="footer-social-link" href="mailto:revancelik@gmx.de" aria-label="E-Mail an Revan Celik senden">
+                <a class="footer-social-link" href="mailto:info@revan-celik.de" aria-label="E-Mail an Revan Celik senden">
                     <img class="footer-social-icon footer-social-icon-default" src="./img/Property 1=mail.svg" alt=""
                         aria-hidden="true">
 

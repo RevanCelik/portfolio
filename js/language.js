@@ -38,6 +38,14 @@ const translations = {
         contactMessagePlaceholder: "Deine Nachricht",
         privacyText: 'Ich habe die <a href="./legal/privacypolicy.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.',
         submitButton: "Senden",
+        submitLoading: "Wird gesendet...",
+        contactNameRequired: "Bitte gib deinen Namen ein.",
+        contactEmailRequired: "Bitte gib deine E-Mail-Adresse ein.",
+        contactEmailInvalid: "Bitte gib eine gültige E-Mail-Adresse ein.",
+        contactMessageRequired: "Bitte gib eine Nachricht ein.",
+        contactPrivacyRequired: "Bitte bestätige die Datenschutzerklärung.",
+        contactSuccess: "Deine Nachricht wurde erfolgreich gesendet.",
+        contactError: "Beim Senden ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
         legalNotice: "Impressum",
         privacyPolicy: "Datenschutzerklärung",
     },
@@ -81,6 +89,14 @@ const translations = {
         contactMessagePlaceholder: "Your message",
         privacyText: 'I have read the <a href="./legal/privacypolicy.html">privacy policy</a> and agree to the processing of my data.',
         submitButton: "Send",
+        submitLoading: "Sending...",
+        contactNameRequired: "Please enter your name.",
+        contactEmailRequired: "Please enter your email address.",
+        contactEmailInvalid: "Please enter a valid email address.",
+        contactMessageRequired: "Please enter a message.",
+        contactPrivacyRequired: "Please accept the privacy policy.",
+        contactSuccess: "Your message was sent successfully.",
+        contactError: "Something went wrong while sending. Please try again later.",
         legalNotice: "Legal Notice",
         privacyPolicy: "Privacy Policy",
     }
@@ -114,6 +130,7 @@ function setLanguage(language) {
     });
 
     localStorage.setItem("portfolioLanguage", language);
+    document.dispatchEvent(new CustomEvent("languagechange"));
 }
 
 function initLanguageSwitch() {

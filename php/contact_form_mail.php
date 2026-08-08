@@ -1,12 +1,15 @@
 <?php
 
-// CORS headers (for Angular / frontend apps)
-header("Access-Control-Allow-Origin: *");
+// Never expose PHP warnings as HTML because this endpoint always returns JSON.
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+
+// Response headers for same-origin requests.
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=utf-8");
 
-$siteEmail = "revancelik@gmx.de";
+$siteEmail = "info@revan-celik.de";
 
 switch ($_SERVER['REQUEST_METHOD']) {
 
@@ -21,18 +24,28 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $params = json_decode($json);
 
         // Saubere JSON-Fehlerprüfung
-        if (json_last_error() !== JSON_ERROR_NONE) {
+        if (json_last_error() !== JSON_ERROR_NONE || !is_object($params)) {
             http_response_code(400);
             echo json_encode(['success' => false, 'error' => 'Invalid JSON']);
             exit;
         }
 
-    $email = trim($params->email ?? '');
-    $name = trim($params->name ?? '');
-    $userMessage = trim($params->message ?? '');
+        $email = trim($params->email ?? '');
+        $name = trim($params->name ?? '');
+        $userMessage = trim($params->message ?? '');
+        $privacyAccepted = ($params->privacy ?? false) === true;
 
-        // Basic validation
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($name) || empty($userMessage)) {
+        // Validate required values, consent, and maximum lengths.
+        if (
+            !$privacyAccepted ||
+            !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+            empty($name) ||
+            empty($userMessage) ||
+            mb_strlen($name) > 100 ||
+            mb_strlen($email) > 254 ||
+            mb_strlen($userMessage) > 5000 ||
+            preg_match('/[\r\n]/', $email)
+        ) {
             http_response_code(400);
             echo json_encode(['success' => false, 'error' => 'Invalid input data']);
             exit;
@@ -63,25 +76,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $headers[] = 'Return-Path: ' . $siteEmail; 
 
         // Send mail
-        $success = mail(
+        $success = @mail(
             $recipient,
             $subject,
             $mailBody,
             implode("\r\n", $headers),
             '-f ' . $siteEmail 
         );
-
-//         echo json_encode([
-//     'success' => true,
-//     'message' => 'Die Formulardaten wurden erfolgreich empfangen.',
-//     'data' => [
-//         'name' => $safeName,
-//         'email' => $safeEmail,
-//         'message' => $safeMessage
-//     ]
-// ]);
-
-exit;
 
         if ($success) {
             echo json_encode(['success' => true]);

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Fira Code";
-    src: url("./fonts/FiraCode-Regular.woff2") format("woff2");
+    src: url("./fonts/FiraCode-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: "Fira Code";
-    src: url("./fonts/FiraCode-Medium.woff2") format("woff2");
+    src: url("./fonts/FiraCode-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Fira Code";
-    src: url("./fonts/FiraCode-SemiBold.woff2") format("woff2");
+    src: url("./fonts/FiraCode-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: "Fira Code";
-    src: url("./fonts/FiraCode-Bold.woff2") format("woff2");
+    src: url("./fonts/FiraCode-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -858,6 +858,15 @@ h1 {
     position: relative;
 }
 
+.contact-field-error {
+    display: block;
+    min-height: 20px;
+    margin-top: 6px;
+    color: var(--accent);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
 .contact-field label {
     position: absolute;
     width: 1px;
@@ -912,9 +921,19 @@ h1 {
     background-color: rgba(255, 255, 255, 0.02);
 }
 
-.contact-field input:user-invalid,
-.contact-field textarea:user-invalid {
+.contact-field input.is-invalid,
+.contact-field textarea.is-invalid {
     border-color: var(--accent);
+}
+
+.contact-field input:-webkit-autofill,
+.contact-field input:-webkit-autofill:hover,
+.contact-field input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text);
+    caret-color: var(--text);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1000px var(--background) inset;
+    transition: background-color 9999s ease-out;
 }
 
 .contact-form-footer {
@@ -942,6 +961,15 @@ h1 {
     font-size: 13px;
     line-height: 1.45;
     cursor: pointer;
+}
+
+.privacy-field {
+    flex: 1 1 auto;
+    max-width: 760px;
+}
+
+.privacy-field .contact-field-error {
+    padding-left: 28px;
 }
 
 .privacy-checkbox input {
@@ -1010,7 +1038,7 @@ h1 {
         transform 150ms ease;
 }
 
-.contact-submit-button:hover {
+.contact-submit-button:not(:disabled):hover {
     border-color: var(--accent);
     background-color: var(--accent);
     color: var(--background);
@@ -1021,6 +1049,7 @@ h1 {
     border-color: rgba(247, 245, 255, 0.3);
     color: rgba(247, 245, 255, 0.4);
     cursor: not-allowed;
+    background-color: transparent;
     transform: none;
 }
 
