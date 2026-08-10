@@ -2022,3 +2022,74 @@ main {
     background-color: transparent;
     background-image: none;
 }
+
+/* Subtle scroll reveals */
+.scroll-reveal {
+    --reveal-order: 0;
+    opacity: 0;
+    translate: 0 42px;
+    scale: 0.985;
+    transition:
+        opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+        translate 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        scale 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-order) * 80ms);
+    will-change: opacity, translate, scale;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+}
+
+.about-image-wrapper.scroll-reveal,
+.project-card:nth-of-type(even).scroll-reveal {
+    translate: -44px 20px;
+}
+
+.about-image-wrapper.scroll-reveal.is-visible,
+.project-card:nth-of-type(even).scroll-reveal.is-visible {
+    translate: 0 0;
+}
+
+.about-content.scroll-reveal,
+.project-card:nth-of-type(odd).scroll-reveal,
+.contact-form.scroll-reveal {
+    translate: 44px 20px;
+}
+
+.about-content.scroll-reveal.is-visible,
+.project-card:nth-of-type(odd).scroll-reveal.is-visible,
+.contact-form.scroll-reveal.is-visible {
+    translate: 0 0;
+}
+
+@media (max-width: 700px) {
+    .scroll-reveal,
+    .about-image-wrapper.scroll-reveal,
+    .about-content.scroll-reveal,
+    .project-card:nth-of-type(even).scroll-reveal,
+    .project-card:nth-of-type(odd).scroll-reveal,
+    .contact-form.scroll-reveal {
+        translate: 0 28px;
+    }
+
+    .scroll-reveal.is-visible,
+    .about-image-wrapper.scroll-reveal.is-visible,
+    .about-content.scroll-reveal.is-visible,
+    .project-card:nth-of-type(even).scroll-reveal.is-visible,
+    .project-card:nth-of-type(odd).scroll-reveal.is-visible,
+    .contact-form.scroll-reveal.is-visible {
+        translate: 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+        transition: none;
+    }
+}
