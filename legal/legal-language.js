@@ -32,7 +32,7 @@ function updateLegalPageChrome(language) {
             navLabel: "Rechtliche Navigation",
             otherPage: isPrivacyPolicy ? "Impressum" : "Datenschutz",
             title: isPrivacyPolicy ? "Datenschutzerklärung" : "Impressum",
-            updated: "Stand: Juli 2026",
+            updated: "Stand: August 2026",
             legalNotice: "Impressum",
             privacyPolicy: "Datenschutz"
         },
@@ -41,7 +41,7 @@ function updateLegalPageChrome(language) {
             navLabel: "Legal navigation",
             otherPage: isPrivacyPolicy ? "Legal Notice" : "Privacy Policy",
             title: isPrivacyPolicy ? "Privacy Policy" : "Legal Notice",
-            updated: "Last updated: July 2026",
+            updated: "Last updated: August 2026",
             legalNotice: "Legal Notice",
             privacyPolicy: "Privacy Policy"
         }
