@@ -37,6 +37,8 @@
     --accent: #ff624e;
     --text: #f7f5ff;
     --header-height: 76px;
+    --legal-header-width: 1230px;
+    --legal-content-width: 960px;
 }
 
 * {
@@ -52,6 +54,9 @@ html {
 body {
     min-width: 320px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
     background-color: var(--background);
     color: var(--text);
     font-family: "Fira Code", monospace;
@@ -74,7 +79,7 @@ a {
 
     width: 100%;
     height: var(--header-height);
-    padding: 0 max(24px, calc((100% - 1230px) / 2));
+    padding: 0 max(24px, calc((100% - var(--legal-header-width)) / 2));
 
     background-color: rgba(9, 0, 34, 0.96);
     backdrop-filter: blur(10px);
@@ -111,7 +116,7 @@ a {
 
 .legal-nav a {
     color: var(--accent);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     transition:
         color 150ms ease,
@@ -124,7 +129,8 @@ a {
 }
 
 .legal-main {
-    width: min(100% - 48px, 960px);
+    flex: 1 0 auto;
+    width: min(100% - 48px, var(--legal-content-width));
     margin: 0 auto;
     padding: calc(var(--header-height) + 80px) 0 100px;
 }
@@ -136,7 +142,7 @@ a {
 .legal-label {
     margin-bottom: 14px;
     color: var(--primary);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -150,7 +156,7 @@ a {
 .legal-updated {
     margin-top: 18px;
     color: rgba(247, 245, 255, 0.72);
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .legal-content {
@@ -182,7 +188,7 @@ a {
 .legal-section p,
 .legal-section li {
     color: var(--text);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -206,7 +212,7 @@ a {
 
 .legal-note {
     color: rgba(247, 245, 255, 0.72);
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .legal-language-block {
@@ -216,6 +222,7 @@ a {
 }
 
 .legal-footer {
+    flex-shrink: 0;
     padding: 36px 24px;
     background-color: var(--background-secondary);
 }
@@ -224,13 +231,13 @@ a {
     display: flex;
     justify-content: center;
     gap: 28px;
-    width: min(100%, 1230px);
+    width: min(100%, var(--legal-header-width));
     margin: 0 auto;
 }
 
 .legal-footer a {
     color: var(--accent);
-    font-size: 13px;
+    font-size: 16px;
     transition: color 150ms ease;
 }
 
@@ -256,7 +263,7 @@ a {
     }
 
     .legal-nav a {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .legal-main {
@@ -277,12 +284,94 @@ a {
 
     .legal-section p,
     .legal-section li {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .legal-footer-inner {
         flex-direction: column;
         align-items: center;
         gap: 16px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    :root {
+        --header-height: 84px;
+        --legal-header-width: 1500px;
+        --legal-content-width: 1200px;
+    }
+
+    body {
+        font-size: 18px;
+    }
+
+    .legal-logo {
+        font-size: 34px;
+    }
+
+    .legal-nav a,
+    .legal-label,
+    .legal-updated,
+    .legal-section p,
+    .legal-section li,
+    .legal-note,
+    .legal-footer a {
+        font-size: 18px;
+    }
+
+    .legal-main {
+        padding-top: calc(var(--header-height) + 110px);
+        padding-bottom: 130px;
+    }
+
+    .legal-title {
+        font-size: 80px;
+    }
+
+    .legal-section {
+        padding: 42px;
+    }
+
+    .legal-section h2 {
+        font-size: 36px;
+    }
+
+    .legal-section h3 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width: 2400px) {
+    :root {
+        --header-height: 92px;
+        --legal-header-width: 1800px;
+        --legal-content-width: 1440px;
+    }
+
+    body,
+    .legal-nav a,
+    .legal-label,
+    .legal-updated,
+    .legal-section p,
+    .legal-section li,
+    .legal-note,
+    .legal-footer a {
+        font-size: 20px;
+    }
+
+    .legal-title {
+        font-size: 92px;
+    }
+
+    .legal-section {
+        padding: 52px;
+    }
+
+    .legal-section h2 {
+        font-size: 42px;
+    }
+
+    .legal-section h3 {
+        font-size: 26px;
     }
 }
