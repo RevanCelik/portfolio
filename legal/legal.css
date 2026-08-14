@@ -178,9 +178,13 @@ a {
     line-height: 1.2;
 }
 
+.legal-section > h2:not(:first-child) {
+    margin-top: 36px;
+}
+
 .legal-section h3 {
     margin: 28px 0 12px;
-    color: var(--accent);
+    color: var(--primary);
     font-size: 19px;
     line-height: 1.3;
 }
